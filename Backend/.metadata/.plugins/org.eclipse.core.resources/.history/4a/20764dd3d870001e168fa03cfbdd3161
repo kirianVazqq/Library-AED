@@ -1,0 +1,41 @@
+package com.kirian.puntuados.entity.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kirian.library.entity.dao.IAuthorDao;
+import com.kirian.library.entity.models.Author;
+@Service
+public class AuthorServiceImpL implements IAuthorService{
+
+	@Autowired
+	private IAuthorDao authorDao;
+	
+	@Override
+	public Author get (long id) {
+		return authorDao.findById(id).get();
+	}
+	
+	@Override
+	public List<Author>getAll () {
+		return (List<Author>) authorDao.findAll();
+	}
+	@Override
+	public void post (Author author) {
+		authorDao.save(author);
+	}
+	@Override
+	public void put (Author author, long id) {
+		authorDao.findById(id).ifPresent((x)->{
+			author.setId(id);
+			authorDao.save(author);
+		});
+	}
+	@Override
+	public void delete (long id) {
+		authorDao.deleteById(id);
+	}
+	
+}

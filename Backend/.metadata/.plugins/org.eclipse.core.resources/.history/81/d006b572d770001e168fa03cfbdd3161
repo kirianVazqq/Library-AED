@@ -1,0 +1,14 @@
+package com.kirian.puntuados.entity.services;
+
+import java.util.List;
+
+import com.kirian.puntuados.entity.models.Author;
+
+public interface IAuthorService {
+public Author get (long id);
+public List<Author> getAll();
+public void post (Author user);
+public void put (Author user, long id);
+public void delete (long id);
+};
+

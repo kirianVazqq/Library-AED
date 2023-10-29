@@ -1,0 +1,50 @@
+<div>
+  <form [formGroup]="formAuthor" (ngSubmit)="addAuthor()">
+    <ion-item>
+      <ion-input
+        label="Fecha de nacimiento"
+        [placeholder]="'Fecha de nacimiento'"
+        formControlName="birthDate"
+      />
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Nacionalidad"
+        [placeholder]="'Nacionalidad'"
+        formControlName="nationality"
+      />
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Nombre"
+        [placeholder]="'Nombre'"
+        formControlName="name"
+      />
+    </ion-item>
+    <ion-button type="submit">Guardar</ion-button>
+    <ion-button (click)="editAuthor()">Guardar edición</ion-button>
+  </form>
+</div>
+
+<div class="show-data-container">
+  <h1>Autores</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha nacimiento</th>
+        <th>Nacionalidad</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of authors">
+        <td>{{ b.birthDate }}</td>
+        <td>{{ b.nationality }}</td>
+        <td>{{ b.name }}</td>
+        <ion-button (click)="deleteAuthor(b.id)">Borrar</ion-button>
+        <ion-button (click)="addInfoInForm(b,b.id)">Editar</ion-button>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

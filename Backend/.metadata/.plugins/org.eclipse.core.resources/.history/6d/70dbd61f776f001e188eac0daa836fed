@@ -1,0 +1,41 @@
+package com.kirian.puntuados.entity.services;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.kirian.puntuados.entity.dao.IRestaurantDao;
+import com.kirian.puntuados.entity.models.Restaurant;import com.kirian.puntuados.entity.models.User;
+
+
+
+@Service
+public class RestaurantServiceImpL implements IRestaurantService {
+
+	@Autowired
+	private IRestaurantDao restaurantDao;
+	
+	@Override
+	public Restaurant get(long id) {
+		return restaurantDao.findById(id).get();
+	};
+	
+	@Override
+	public List<Restaurant>getAll () {
+		return (List<Restaurant>) restaurantDao.findAll();
+	};
+	@Override
+	public void post (Restaurant restaurant) {
+		restaurantDao.save(restaurant);
+	};
+	@Override
+	public void put (Restaurant restaurant, long id) {
+		restaurantDao.findById(id).ifPresent((x)->{
+			restaurant.setId(id);
+			restaurantDao.save(restaurant);
+		});
+	};
+	@Override
+	public void delete (long id) {
+		restaurantDao.deleteById(id);
+	};
+}

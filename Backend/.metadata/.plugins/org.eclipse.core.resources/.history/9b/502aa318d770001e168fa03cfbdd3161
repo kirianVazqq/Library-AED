@@ -1,0 +1,12 @@
+package com.kirian.puntuados.entity.dao;
+
+
+
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.kirian.puntuados.entity.models.User;
+
+public interface IAuthorDao extends CrudRepository<User, Long>{
+
+}

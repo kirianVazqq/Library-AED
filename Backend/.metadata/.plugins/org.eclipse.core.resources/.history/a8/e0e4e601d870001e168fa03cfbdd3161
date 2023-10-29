@@ -1,0 +1,10 @@
+package com.kirian.puntuados.entity.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.kirian.puntuados.entity.models.Restaurant;
+
+
+public interface IBookDao extends CrudRepository<Restaurant, Long>{
+
+}

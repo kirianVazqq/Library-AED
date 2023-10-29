@@ -1,0 +1,47 @@
+<div>
+  <form [formGroup]="formLoans" (ngSubmit)="addLoan()">
+    <ion-item>
+      <ion-input label="Fecha devolución" formControlName="returnDate" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Estado" formControlName="status" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Id_libro" formControlName="bookId" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Fecha de prestamos" formControlName="loanDate" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Id_miembro" formControlName="memberId" />
+    </ion-item>
+    <ion-button type="submit">Guardar</ion-button>
+    <ion-button (click)="editLoan()">Guardar edición</ion-button>
+  </form>
+</div>
+<div class="show-data-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha devolución</th>
+        <th>Estado</th>
+        <th>Id_libro</th>
+        <th>Fecha de prestamos</th>
+        <th>Id_miembro</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of loans">
+        <td>{{ b.returnDate }}</td>
+        <td>{{ b.status }}</td>
+        <td>{{ b.bookId }}</td>
+        <td>{{ b.loanDate }}</td>
+        <td>{{ b.memberId }}</td>
+        <ion-button (click)="deleteLoan(b.id)"type="submit">Borrar</ion-button>
+        <ion-button (click)="addInfoInForm(b,b.id)">Editar</ion-button>
+      </tr>
+      
+    </tbody>
+    
+  </table>
+</div>

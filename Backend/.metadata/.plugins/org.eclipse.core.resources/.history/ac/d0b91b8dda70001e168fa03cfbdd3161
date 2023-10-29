@@ -1,0 +1,5 @@
+package com.kirian.library.entity.services;
+
+public class MemberServiceImpL {
+
+}

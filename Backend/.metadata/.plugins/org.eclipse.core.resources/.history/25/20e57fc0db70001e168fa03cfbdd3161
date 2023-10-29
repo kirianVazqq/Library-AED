@@ -1,0 +1,26 @@
+package com.kirian.library.entity.models;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name= "loans")
+public class Loan {
+	private static final long  serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private long memberId;
+	private long bookId;
+	private String loanDate;
+	private String ReturnDate;
+	private String Status;
+
+
+
+
+
+}

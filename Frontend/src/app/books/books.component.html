@@ -1,0 +1,43 @@
+<div>
+  <form [formGroup]="formBook" (ngSubmit)="addBook()">
+    <ion-item>
+      <ion-input label="Id autor" formControlName="authorId" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Titulo" formControlName="title" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Genero" formControlName="genre" />
+    </ion-item>
+    <ion-item>
+      <ion-input label="Año publicacion" formControlName="publicationYear" />
+    </ion-item>
+    <ion-button type="submit">Guardar</ion-button>
+    <ion-button (click)="editBook()">Guardar edición</ion-button>
+  </form>
+</div>
+
+<div class="show-data-container">
+  <h1>Libros</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Genero</th>
+        <th>Año de publicación</th>
+        <th>Autor_id</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let b of books">
+        <td>{{ b.author?.id }}</td>
+        <td>{{ b.title }}</td>
+        <td>{{ b.genre }}</td>
+        <td>{{ b.publicationYear}}</td>
+        <ion-button (click)="deleteBook(b.id)">Borrar</ion-button>
+        <ion-button (click)="addInfoInForm(b,b.id)">Editar</ion-button>
+      </tr>
+    </tbody>
+  </table>
+</div>

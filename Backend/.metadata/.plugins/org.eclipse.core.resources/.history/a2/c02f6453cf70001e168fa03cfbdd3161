@@ -1,0 +1,12 @@
+package com.kirian.puntuados.entity.services;
+
+import java.util.List;
+import com.kirian.puntuados.entity.models.User;
+
+public interface IUserService {
+    User get(long id);
+    List<User> getAll();
+    void post(User user);
+    void put(User user, long id);
+    void delete(long id);
+}

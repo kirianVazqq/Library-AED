@@ -1,0 +1,43 @@
+package com.kirian.library.entity.services;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kirian.library.entity.dao.IBookDao;
+import com.kirian.library.entity.models.Book;
+
+
+
+
+@Service
+public class BookServiceImpL implements IBookService {
+
+	@Autowired
+	private IBookDao bookDao;
+	
+	@Override
+	public Book get(long id) {
+		return bookDao.findById(id).get();
+	};
+	
+	@Override
+	public List<Book>getAll () {
+		return (List<Book>) bookDao.findAll();
+	};
+	@Override
+	public void post (Book book) {
+		bookDao.save(book);
+	};
+	@Override
+	public void put (Book book, long id) {
+		bookDao.findById(id).ifPresent((x)->{
+			book.setId(id);
+			bookDao.save(book);
+		});
+	};
+	@Override
+	public void delete (long id) {
+		bookDao.deleteById(id);
+	};
+}

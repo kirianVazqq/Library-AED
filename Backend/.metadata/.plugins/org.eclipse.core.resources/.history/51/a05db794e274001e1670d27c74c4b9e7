@@ -1,0 +1,69 @@
+package com.kirian.library.entity.models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name= "loan")
+public class Loan {
+	private static final long  serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private long memberId;
+	private long bookId;	
+	private String loanDate;
+	private String returnDate;
+	private String status;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public long getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(long memberId) {
+		this.memberId = memberId;
+	}
+	public long getBookId() {
+		return bookId;
+	}
+	public void setBookId(long bookId) {
+		this.bookId = bookId;
+	}
+	public String getLoanDate() {
+		return loanDate;
+	}
+	public void setLoanDate(String loanDate) {
+		this.loanDate = loanDate;
+	}
+	public String getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(String returnDate) {
+		this.returnDate = returnDate;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Loan(long id, long memberId, long bookId, String loanDate, String returnDate, String status) {
+		super();
+		this.id = id;
+		this.memberId = memberId;
+		this.bookId = bookId;
+		this.loanDate = loanDate;
+		this.returnDate = returnDate;
+		this.status = status;
+	}
+	
+	public Loan() {
+
+	}
+}

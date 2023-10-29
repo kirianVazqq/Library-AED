@@ -1,0 +1,25 @@
+#container a {
+    text-decoration: none;
+  }
+  #nav-bar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around; /* Distribuye los enlaces de manera uniforme */
+    padding: 10px 0;
+  }
+  
+  #nav-bar a {
+    color: white; /* Color del texto de los enlaces */
+    padding: 14px 20px; 
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 17px; /* Tamaño del texto de los enlaces */
+    transition: 0.3s; /* Suaviza el efecto hover */
+    border-radius: 4px; /* Borde redondeado para el efecto hover */
+  }
+  
+  #nav-bar a:hover {
+    background-color: #ddd; /* Color de fondo cuando se pasa el ratón por encima */
+    color: #333; /* Color del texto cuando se pasa el ratón por encima */
+  }
+  

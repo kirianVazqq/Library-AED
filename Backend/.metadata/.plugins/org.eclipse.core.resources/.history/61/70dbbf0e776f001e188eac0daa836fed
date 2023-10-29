@@ -1,0 +1,46 @@
+package com.kirian.puntuados.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kirian.puntuados.entity.models.Restaurant;
+import com.kirian.puntuados.entity.services.IRestaurantService;
+
+@RestController
+public class RestaurantController {
+	@Autowired
+	IRestaurantService restaurantService;
+	
+	@GetMapping("/restaurant")
+	public List<Restaurant> getAllUsers(){
+		return restaurantService.getAll();
+	}
+	
+	//PathVariable indica que un parametro del metodo 
+	//debe ser enlazado, como en el caso del id
+	@GetMapping("/restaurant/{id}")
+	public Restaurant getOne(@PathVariable(value = "id")long id){
+		return restaurantService.get(id);
+	}
+	
+	@PostMapping("/restaurant")
+	public void post(Restaurant restaurant){
+		restaurantService.post(restaurant);
+	}
+	@PutMapping("/restaurant/{id}")
+	public void put(Restaurant restaurant, @PathVariable(value = "id")long id){
+		restaurantService.put(restaurant, id);
+	}
+	
+	@DeleteMapping("/restaurant/{id}")
+	public void put(@PathVariable(value = "id")long id){
+		restaurantService.delete(id);
+	}
+}

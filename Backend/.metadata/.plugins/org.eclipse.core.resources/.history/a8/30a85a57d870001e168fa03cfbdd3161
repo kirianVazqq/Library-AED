@@ -1,0 +1,13 @@
+package com.kirian.puntuados.entity.services;
+
+import java.util.List;
+
+import com.kirian.puntuados.entity.models.Book;
+
+public interface IRestaurantService {
+	public Book get (long id);
+	public List<Book> getAll();
+	public void post(Book restaurant);
+	public void put(Book restaurant, long id);
+	public void delete(long id);
+}

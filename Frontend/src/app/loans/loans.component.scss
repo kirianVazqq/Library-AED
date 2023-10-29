@@ -1,0 +1,42 @@
+.show-data-container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #242424; 
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #444; 
+  
+      thead {
+        background-color: #323232; 
+  
+        tr {
+          th {
+            color: #e0e0e0; 
+            padding: 10px 15px; 
+            border-bottom: 2px solid #444;
+          }
+        }
+      }
+  
+      tbody {
+        tr {
+          td {
+            color: #ccc;
+            padding: 10px 15px; 
+            border-bottom: 1px solid #444; 
+            text-align: center; 
+            vertical-align: middle; 
+  
+            &:last-child {
+              border-bottom: none; 
+            }
+          }
+        }
+      }
+    }
+  }
+  

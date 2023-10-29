@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.kirian.library.entity.dao.IMemberDao"/>
+    <fullyQualifiedTypeName name="com.kirian.library.entity.models.Member"/>
+    <fullyQualifiedTypeName name="com.kirian.library.entity.services.IMemberService"/>
+    <fullyQualifiedTypeName name="com.kirian.library.entity.dao.ILoanDao"/>
+    <fullyQualifiedTypeName name="com.kirian.library.entity.services.ILoanService"/>
+    <fullyQualifiedTypeName name="com.kirian.library.entity.models.Loan"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinTable"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToMany"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

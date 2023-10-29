@@ -1,0 +1,10 @@
+package com.kirian.library.entity.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.kirian.puntuados.entity.models.Book;
+
+
+public interface IBookDao extends CrudRepository<Book, Long>{
+
+}
